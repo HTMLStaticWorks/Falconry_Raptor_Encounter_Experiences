@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium falconry experiences, raptor encounter tours, flying demonstrations, photography sessions, workshops, conservation programs, and gift certificates.">
+  <title>Aerie Encounters | Falconry & Raptor Encounter Experiences</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="assets/js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div data-component="site-header"></div>
+
+  <main class="page-transition">
+    <section class="hero-section">
+      <div class="hero-bg" data-parallax style="background-image:url('https://source.unsplash.com/2400x1500/?falcon,flight,wilderness&sig=101');"></div>
+      <div class="hero-overlay"></div>
+      <div class="ambient-particles"></div>
+      <div class="feather-stream"></div>
+      <div class="site-shell hero-content">
+        <div class="max-w-4xl reveal">
+          <p class="kicker">Luxury Falconry Experiences</p>
+          <h1 class="hero-title mt-5">Experience the Majesty of <span class="gold-gradient">Raptors</span></h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-ivory/80 md:text-xl">Step into a cinematic forest reserve where falcons slice through sunset air, eagles command the horizon, and expert handlers guide every intimate wildlife encounter.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <button class="btn-primary" type="button" data-open-booking><i data-lucide="calendar-check" class="h-5 w-5"></i>Book an Experience</button>
+            <a class="btn-secondary" href="experiences.html#schedule"><i data-lucide="clock" class="h-5 w-5"></i>View Flying Schedule</a>
+          </div>
+          <div class="mt-10 grid max-w-3xl grid-cols-3 gap-3">
+            <div class="glass-panel p-4 text-center">
+              <p class="font-display text-3xl font-bold text-bronze" data-counter="28" data-suffix="+">0</p>
+              <p class="text-xs font-semibold text-ivory/70">Raptors</p>
+            </div>
+            <div class="glass-panel p-4 text-center">
+              <p class="font-display text-3xl font-bold text-bronze" data-counter="11">0</p>
+              <p class="text-xs font-semibold text-ivory/70">Experiences</p>
+            </div>
+            <div class="glass-panel p-4 text-center">
+              <p class="font-display text-3xl font-bold text-bronze" data-counter="96" data-suffix="%">0</p>
+              <p class="text-xs font-semibold text-ivory/70">Guest Rating</p>
+            </div>
+          </div>
+        </div>
+        <div class="floating-frame">
+          <figure class="media-card relative"><img data-lightbox src="https://source.unsplash.com/900x700/?falconer,glove,bird&sig=102" alt="Falcon perched on a handler glove"><figcaption class="image-caption text-sm font-bold">Glove-side introductions</figcaption></figure>
+          <figure class="media-card relative"><img data-lightbox src="https://source.unsplash.com/900x700/?eagle,flight,sunset&sig=103" alt="Eagle flying at sunset"><figcaption class="image-caption text-sm font-bold">Sunset flying shows</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad textured-band">
+      <div class="site-shell">
+        <div class="mb-10 max-w-3xl reveal">
+          <p class="kicker">Featured Encounters</p>
+          <h2 class="section-title mt-3">Raptor experiences designed for wonder, stillness, and wild momentum.</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="profile-card reveal">
+            <div class="h-72 overflow-hidden"><img data-lightbox src="https://source.unsplash.com/900x900/?falconry,hawk,forest&sig=104" alt="Falconry handler with hawk in forest"></div>
+            <div class="p-6">
+              <div class="mb-3 flex items-center gap-2 text-bronze"><i data-lucide="mountain" class="h-5 w-5"></i><span class="text-sm font-bold">Private Falconry</span></div>
+              <h3 class="font-display text-2xl font-bold">The Aerie Private Walk</h3>
+              <p class="mt-3 section-copy">A one-to-one guided encounter with glove handling, forest flying, and quiet time with trained falcons.</p>
+            </div>
+          </article>
+          <article class="profile-card reveal">
+            <div class="h-72 overflow-hidden"><img data-lightbox src="https://source.unsplash.com/900x900/?owl,raptor,portrait&sig=105" alt="Owl portrait in natural light"></div>
+            <div class="p-6">
+              <div class="mb-3 flex items-center gap-2 text-bronze"><i data-lucide="eye" class="h-5 w-5"></i><span class="text-sm font-bold">Raptor Close-Up</span></div>
+              <h3 class="font-display text-2xl font-bold">Eagles, Owls & Falcons</h3>
+              <p class="mt-3 section-copy">Meet species ambassadors and learn how vision, wing design, and hunting instincts shape each bird.</p>
+            </div>
+          </article>
+          <article class="profile-card reveal">
+            <div class="h-72 overflow-hidden"><img data-lightbox src="https://source.unsplash.com/900x900/?wildlife,photographer,bird&sig=106" alt="Wildlife photographer during a bird session"></div>
+            <div class="p-6">
+              <div class="mb-3 flex items-center gap-2 text-bronze"><i data-lucide="camera" class="h-5 w-5"></i><span class="text-sm font-bold">Photography</span></div>
+              <h3 class="font-display text-2xl font-bold">Flight Lens Sessions</h3>
+              <p class="mt-3 section-copy">Reserve golden-hour setups for wing spreads, perch portraits, and action-flight compositions.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="section-pad">
+      <div class="site-shell">
+        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div class="reveal">
+            <p class="kicker">Flying Demonstrations</p>
+            <h2 class="section-title mt-3">Daily flying windows shaped around weather, light, and bird welfare.</h2>
+            <p class="section-copy mt-5">Our schedule shifts with wind, temperature, and the birds’ condition. Every demonstration balances guest access with responsible handling.</p>
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a href="experiences.html#schedule" class="btn-ghost"><i data-lucide="calendar-days" class="h-5 w-5"></i>Full Schedule</a>
+              <button class="btn-primary" type="button" data-open-booking><i data-lucide="ticket" class="h-5 w-5"></i>Reserve Seats</button>
+            </div>
+          </div>
+          <div class="glass-panel overflow-hidden p-4 reveal" data-slider>
+            <div class="mb-4 flex items-center justify-between gap-3">
+              <h3 class="font-display text-2xl font-bold">This Week</h3>
+              <div class="flex gap-2">
+                <button class="icon-btn !border-[var(--line)] !text-[var(--ink)]" type="button" data-slider-prev aria-label="Previous schedule"><i data-lucide="chevron-left"></i></button>
+                <button class="icon-btn !border-[var(--line)] !text-[var(--ink)]" type="button" data-slider-next aria-label="Next schedule"><i data-lucide="chevron-right"></i></button>
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <div class="schedule-track flex gap-4" data-slider-track>
+                <article class="slide-card story-card p-5"><img class="mb-4 h-40 w-full rounded-xl object-cover" src="https://source.unsplash.com/700x500/?falcon,sky&sig=107" alt="Falcon in open sky"><p class="text-sm font-bold text-bronze">Monday · 10:30</p><h4 class="mt-2 font-display text-xl font-bold">Falcon Speed Passes</h4><p class="mt-2 section-copy text-sm">Low flight, lure work, and sky-return behavior.</p></article>
+                <article class="slide-card story-card p-5"><img class="mb-4 h-40 w-full rounded-xl object-cover" src="https://source.unsplash.com/700x500/?eagle,demonstration&sig=108" alt="Eagle flying demonstration"><p class="text-sm font-bold text-bronze">Wednesday · 16:45</p><h4 class="mt-2 font-display text-xl font-bold">Eagle Ridge Flight</h4><p class="mt-2 section-copy text-sm">A dramatic ridge-line presentation before sunset.</p></article>
+                <article class="slide-card story-card p-5"><img class="mb-4 h-40 w-full rounded-xl object-cover" src="https://source.unsplash.com/700x500/?owl,forest&sig=109" alt="Owl in forest"><p class="text-sm font-bold text-bronze">Friday · 18:15</p><h4 class="mt-2 font-display text-xl font-bold">Twilight Owl Talk</h4><p class="mt-2 section-copy text-sm">Quiet-flight science and conservation storytelling.</p></article>
+                <article class="slide-card story-card p-5"><img class="mb-4 h-40 w-full rounded-xl object-cover" src="https://source.unsplash.com/700x500/?falconer,sunset&sig=110" alt="Falconer at sunset"><p class="text-sm font-bold text-bronze">Saturday · 09:00</p><h4 class="mt-2 font-display text-xl font-bold">Family Discovery Flight</h4><p class="mt-2 section-copy text-sm">Gentle pacing for first-time visitors and families.</p></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad textured-band">
+      <div class="site-shell">
+        <div class="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div class="max-w-3xl reveal">
+            <p class="kicker">Bird Profiles</p>
+            <h2 class="section-title mt-3">Meet the ambassadors of sky, woodland, and open country.</h2>
+          </div>
+          <a class="btn-ghost reveal" href="bird-profiles.html"><i data-lucide="bird" class="h-5 w-5"></i>Explore Profiles</a>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-3">
+          <article class="media-card relative h-[430px] reveal"><img data-lightbox src="https://source.unsplash.com/900x1200/?peregrine,falcon&sig=111" alt="Peregrine falcon portrait"><div class="image-caption"><p class="text-sm font-bold text-bronze">Peregrine Falcon</p><h3 class="font-display text-2xl font-bold">Astra</h3><p class="mt-2 text-sm text-ivory/75">Speed specialist and lure demonstration star.</p></div></article>
+          <article class="media-card relative h-[430px] reveal"><img data-lightbox src="https://source.unsplash.com/900x1200/?golden,eagle&sig=112" alt="Golden eagle portrait"><div class="image-caption"><p class="text-sm font-bold text-bronze">Golden Eagle</p><h3 class="font-display text-2xl font-bold">Rook</h3><p class="mt-2 text-sm text-ivory/75">Powerful ridge flyer with a calm handler bond.</p></div></article>
+          <article class="media-card relative h-[430px] reveal"><img data-lightbox src="https://source.unsplash.com/900x1200/?barn,owl&sig=113" alt="Barn owl portrait"><div class="image-caption"><p class="text-sm font-bold text-bronze">Barn Owl</p><h3 class="font-display text-2xl font-bold">Lumen</h3><p class="mt-2 text-sm text-ivory/75">Silent-flight educator for evening programs.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="site-shell">
+        <div class="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+          <div class="grid grid-cols-2 gap-4 reveal">
+            <img data-lightbox class="h-72 w-full rounded-2xl object-cover shadow-luxe" src="https://source.unsplash.com/800x1000/?wildlife,photography,bird&sig=114" alt="Wildlife photography close-up">
+            <img data-lightbox class="mt-10 h-72 w-full rounded-2xl object-cover shadow-luxe" src="https://source.unsplash.com/800x1000/?falcon,portrait,camera&sig=115" alt="Falcon portrait photo setup">
+            <img data-lightbox class="col-span-2 h-64 w-full rounded-2xl object-cover shadow-luxe" src="https://source.unsplash.com/1200x700/?sunset,raptor,photography&sig=116" alt="Sunset bird photography session">
+          </div>
+          <div class="reveal">
+            <p class="kicker">Photography Packages</p>
+            <h2 class="section-title mt-3">Golden-hour compositions for photographers who want the real wild frame.</h2>
+            <p class="section-copy mt-5">Choose intimate portrait hides, handler-assisted perch moments, or high-speed flight paths choreographed for safe distance and clean background separation.</p>
+            <div class="mt-7 grid gap-4 sm:grid-cols-2">
+              <div class="stat-card p-5"><p class="font-display text-3xl font-bold text-bronze">90m</p><p class="mt-1 text-sm font-semibold">Sunset Lens Session</p></div>
+              <div class="stat-card p-5"><p class="font-display text-3xl font-bold text-bronze">3</p><p class="mt-1 text-sm font-semibold">Styled Flight Angles</p></div>
+            </div>
+            <a class="btn-primary mt-7" href="photography-packages.html"><i data-lucide="camera" class="h-5 w-5"></i>View Packages</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad textured-band">
+      <div class="site-shell">
+        <div class="mb-10 max-w-3xl reveal">
+          <p class="kicker">Guest Notes</p>
+          <h2 class="section-title mt-3">Visitors leave with a story they can still feel in their hands.</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="story-card p-6 reveal"><img class="mb-5 h-48 w-full rounded-xl object-cover" src="https://source.unsplash.com/700x500/?family,nature,tour&sig=117" alt="Family nature tour"><p class="section-copy">“The private walk felt thoughtful, luxurious, and deeply respectful of the birds. Our guide turned every flight into a living documentary.”</p><p class="mt-5 font-bold text-bronze">Maya R.</p></article>
+          <article class="story-card p-6 reveal"><img class="mb-5 h-48 w-full rounded-xl object-cover" src="https://source.unsplash.com/700x500/?photographer,forest,wildlife&sig=118" alt="Photographer in forest"><p class="section-copy">“I booked the sunset photography package and came home with the cleanest wing shots I have ever made.”</p><p class="mt-5 font-bold text-bronze">Jonah P.</p></article>
+          <article class="story-card p-6 reveal"><img class="mb-5 h-48 w-full rounded-xl object-cover" src="https://source.unsplash.com/700x500/?students,wildlife,education&sig=119" alt="Wildlife education group"><p class="section-copy">“Our school group was completely absorbed. The conservation discussion was accessible, honest, and unforgettable.”</p><p class="mt-5 font-bold text-bronze">Elena S.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="site-shell">
+        <div class="relative overflow-hidden rounded-[2rem] bg-midnight p-8 text-ivory shadow-luxe md:p-12">
+          <div class="absolute inset-0 opacity-45" style="background-image:url('https://source.unsplash.com/1800x900/?falconry,sunset,landscape&sig=120'); background-size:cover; background-position:center;"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/80 to-midnight/30"></div>
+          <div class="relative grid gap-8 lg:grid-cols-[1fr_0.75fr] lg:items-center">
+            <div class="reveal">
+              <p class="kicker">Begin the Encounter</p>
+              <h2 class="mt-3 font-display text-4xl font-bold md:text-6xl">Reserve a day with the birds, or gift one to someone impossible to shop for.</h2>
+            </div>
+            <div class="grid gap-4 reveal">
+              <img data-lightbox class="h-48 w-full rounded-2xl object-cover" src="https://source.unsplash.com/900x500/?gift,certificate,nature&sig=121" alt="Gift certificate with nature styling">
+              <div class="flex flex-col gap-3 sm:flex-row">
+                <button class="btn-primary" type="button" data-open-booking><i data-lucide="calendar-check" class="h-5 w-5"></i>Book Now</button>
+                <a class="btn-secondary" href="gift-certificates.html"><i data-lucide="gift" class="h-5 w-5"></i>Gift Certificates</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-component="site-footer"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
