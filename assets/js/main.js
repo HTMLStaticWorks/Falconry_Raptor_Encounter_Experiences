@@ -1,14 +1,12 @@
 (function () {
   const navItems = [
-    ["Home", "index.html"],
-    ["Home 2", "home2.html"],
-    ["Experiences", "experiences.html"],
-    ["Bird Profiles", "bird-profiles.html"],
-    ["Workshops", "workshops.html"],
-    ["Photography Packages", "photography-packages.html"],
-    ["Gift Certificates", "gift-certificates.html"],
-    ["About", "about.html"],
-    ["Contact", "contact.html"]
+    { label: "Home", href: "index.html" },
+    { label: "Experiences", href: "experiences.html" },
+    { label: "Bird Profiles", href: "bird-profiles.html" },
+    { label: "Workshops", href: "workshops.html" },
+    { label: "Photography", href: "photography-packages.html" },
+    { label: "About", href: "about.html" },
+    { label: "Contact", href: "contact.html" }
   ];
 
   const experiences = [
@@ -17,8 +15,7 @@
     "Sunset Flying Demonstration",
     "Bird Handling Workshop",
     "Wildlife Photography Session",
-    "Conservation Education Program",
-    "Gift Certificate"
+    "Conservation Education Program"
   ];
 
   const icon = (name, className = "w-5 h-5") => `<i data-lucide="${name}" class="${className}" aria-hidden="true"></i>`;
@@ -30,52 +27,102 @@
 
   function buildHeader() {
     const active = currentPage();
-    const navMarkup = navItems
-      .map(([label, href]) => `<a class="nav-link ${active === href ? "active" : ""}" href="${href}">${label}</a>`)
-      .join("");
+    
+    const navMarkup = navItems.map(item => 
+      `<a class="nav-link ${active === item.href ? "active" : ""}" href="${item.href}">${item.label}</a>`
+    ).join("");
 
-    const mobileMarkup = navItems
-      .map(([label, href]) => `<a class="block rounded-xl px-4 py-3 text-base font-semibold text-ivory/85 hover:bg-white/10 ${active === href ? "bg-white/10 text-white" : ""}" href="${href}">${label}</a>`)
-      .join("");
+    const mobileMarkup = navItems.map(item => 
+      `<a class="block rounded-xl px-4 py-3 text-base font-semibold ${active === item.href ? "bg-white/10 text-white" : "text-ivory/85 hover:bg-white/10"}" href="${item.href}">${item.label}</a>`
+    ).join("");
 
     document.querySelectorAll('[data-component="site-header"]').forEach((mount) => {
       mount.innerHTML = `
         <header class="site-header" data-site-header>
-          <div class="site-header-inner rounded-full px-3 py-3 lg:px-4">
+          <div class="site-header-inner rounded-full px-3 py-2 lg:px-4">
             <div class="flex items-center justify-between gap-3">
-              <a href="index.html" class="flex items-center gap-3 text-ivory" aria-label="Falconry & Raptor Encounters home">
-                <span class="grid h-11 w-11 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-5 h-5")}</span>
-                <span class="leading-tight">
-                  <span class="block font-display text-lg font-bold">Aerie Encounters</span>
-                  <span class="block text-xs text-ivory/60">Falconry & Raptors</span>
-                </span>
-              </a>
-              <nav class="desktop-nav hidden items-center gap-4 text-sm font-semibold xl:flex" aria-label="Primary navigation">
+              <div class="flex-1 flex items-center">
+                <a href="index.html" class="flex items-center gap-2 text-ivory" aria-label="Falconry & Raptor Encounters home">
+                  <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-5 h-5")}</span>
+                  <span class="leading-tight hidden sm:block">
+                    <span class="block font-display text-base font-bold tracking-tight">Aerie Encounters</span>
+                    <span class="block text-[10px] text-ivory/50">Falconry & Raptors</span>
+                  </span>
+                </a>
+              </div>
+              <nav class="desktop-nav hidden flex-1 items-center justify-center gap-0.5 text-[13px] font-semibold xl:flex" aria-label="Primary navigation">
                 ${navMarkup}
               </nav>
-              <div class="desktop-actions hidden items-center gap-2 xl:flex">
-                <button class="btn-primary !min-h-11 !px-4" type="button" data-open-booking>${icon("calendar-check", "w-4 h-4")}<span>Book an Experience</span></button>
-                <a class="btn-secondary !min-h-11 !px-4" href="experiences.html#schedule">${icon("clock", "w-4 h-4")}<span>View Flying Schedule</span></a>
-                <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle dark mode">${icon("moon")}</button>
-                <button class="icon-btn" type="button" data-rtl-toggle aria-label="Toggle RTL layout">${icon("languages")}</button>
-              </div>
-              <div class="flex items-center gap-2 xl:hidden">
-                <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle dark mode">${icon("moon")}</button>
-                <button class="icon-btn" type="button" data-rtl-toggle aria-label="Toggle RTL layout">${icon("languages")}</button>
-                <button class="icon-btn" type="button" data-menu-open aria-label="Open menu">${icon("menu")}</button>
+              <div class="flex-1 flex items-center justify-end gap-2">
+                <div class="desktop-actions hidden items-center gap-2 xl:flex">
+                  <button class="icon-btn !w-10 !h-10" type="button" data-search-open aria-label="Search site">${icon("search", "w-4 h-4")}</button>
+                  <div class="h-6 w-px bg-white/10 mx-1"></div>
+                  <button class="btn-primary !min-h-10 !py-1 !px-4 !text-xs" type="button" data-open-booking>${icon("calendar-check", "w-3 h-3")}<span>Book Experience</span></button>
+                  <button class="icon-btn !w-10 !h-10" type="button" data-theme-toggle aria-label="Toggle dark mode">${icon("moon", "w-4 h-4")}</button>
+                  <button class="icon-btn !w-10 !h-10 !bg-white/10 !border-white/20" type="button" aria-label="User account">${icon("user", "w-4 h-4")}</button>
+                </div>
+                <div class="flex items-center gap-2 xl:hidden">
+                  <button class="icon-btn !w-10 !h-10" type="button" data-search-open aria-label="Search site">${icon("search", "w-4 h-4")}</button>
+                  <button class="icon-btn !w-10 !h-10" type="button" data-menu-open aria-label="Open menu">${icon("menu", "w-4 h-4")}</button>
+                </div>
               </div>
             </div>
           </div>
         </header>
+
+        <div class="search-overlay" data-search-overlay>
+          <div class="search-container site-shell">
+            <div class="flex items-center gap-4 border-b border-white/20 pb-4">
+              ${icon("search", "w-6 h-6 text-bronze")}
+              <input type="text" class="search-input" placeholder="Search experiences, birds, or workshops..." autofocus>
+              <button class="icon-btn" type="button" data-search-close>${icon("x")}</button>
+            </div>
+            <div class="mt-8 grid gap-8 md:grid-cols-2">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-bronze mb-4">Quick Links</p>
+                <div class="grid gap-2">
+                  <a href="experiences.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                    <span class="w-8 h-8 grid place-items-center rounded-lg bg-bronze/10 text-bronze">${icon("map")}</span>
+                    <span>All Experiences</span>
+                  </a>
+                  <a href="bird-profiles.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                    <span class="w-8 h-8 grid place-items-center rounded-lg bg-bronze/10 text-bronze">${icon("bird")}</span>
+                    <span>Bird Profiles</span>
+                  </a>
+                  <a href="photography-packages.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                    <span class="w-8 h-8 grid place-items-center rounded-lg bg-bronze/10 text-bronze">${icon("camera")}</span>
+                    <span>Photography</span>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-bronze mb-4">Popular Searches</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1.5 rounded-full border border-white/10 text-sm hover:border-bronze cursor-pointer transition-colors">Private Walk</span>
+                  <span class="px-3 py-1.5 rounded-full border border-white/10 text-sm hover:border-bronze cursor-pointer transition-colors">Owl Encounter</span>
+                  <span class="px-3 py-1.5 rounded-full border border-white/10 text-sm hover:border-bronze cursor-pointer transition-colors">Falconry Workshop</span>
+                  <span class="px-3 py-1.5 rounded-full border border-white/10 text-sm hover:border-bronze cursor-pointer transition-colors">Gift Vouchers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <aside class="mobile-menu p-5" data-mobile-menu aria-label="Mobile navigation">
           <div class="mb-6 flex items-center justify-between">
-            <span class="font-display text-xl font-bold text-ivory">Aerie Encounters</span>
+            <div class="flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-5 h-5")}</span>
+              <span class="font-display text-xl font-bold text-ivory">Aerie Encounters</span>
+            </div>
             <button class="icon-btn" type="button" data-menu-close aria-label="Close menu">${icon("x")}</button>
           </div>
-          <nav class="grid gap-1">${mobileMarkup}</nav>
-          <div class="mt-6 grid gap-3">
+          <nav class="grid gap-1 overflow-y-auto max-h-[60vh]">${mobileMarkup}</nav>
+          <div class="mt-6 pt-6 border-t border-white/10 grid gap-3">
             <button class="btn-primary" type="button" data-open-booking>${icon("calendar-check", "w-4 h-4")}Book an Experience</button>
-            <a class="btn-secondary" href="experiences.html#schedule">${icon("clock", "w-4 h-4")}View Flying Schedule</a>
+            <div class="flex gap-2">
+              <button class="icon-btn flex-1 !h-12" type="button" data-theme-toggle>${icon("moon")} Theme</button>
+              <button class="icon-btn flex-1 !h-12" type="button" data-rtl-toggle>${icon("languages")} RTL</button>
+            </div>
           </div>
         </aside>
       `;
@@ -83,9 +130,9 @@
   }
 
   function buildFooter() {
-    const navMarkup = navItems
-      .map(([label, href]) => `<a class="text-sm text-ivory/68 hover:text-bronze" href="${href}">${label}</a>`)
-      .join("");
+    const navLinksMarkup = navItems.map(item => 
+      `<a class="text-sm text-ivory/68 hover:text-bronze" href="${item.href}">${item.label}</a>`
+    ).join("");
 
     document.querySelectorAll('[data-component="site-footer"]').forEach((mount) => {
       mount.innerHTML = `
@@ -104,7 +151,7 @@
               </div>
               <div>
                 <h3 class="mb-4 text-lg font-bold text-bronze">Explore</h3>
-                <div class="grid grid-cols-2 gap-3">${navMarkup}</div>
+                <div class="grid grid-cols-2 gap-3">${navLinksMarkup}</div>
               </div>
               <div>
                 <h3 class="mb-4 text-lg font-bold text-bronze">Plan Your Visit</h3>
@@ -193,10 +240,13 @@
     const mobileMenu = document.querySelector("[data-mobile-menu]");
     const bookingModal = document.querySelector("[data-booking-modal]");
     const lightbox = document.querySelector("[data-lightbox-viewer]");
+    const searchOverlay = document.querySelector("[data-search-overlay]");
 
     const closeMenu = () => mobileMenu && mobileMenu.classList.remove("open");
     const openBooking = () => bookingModal && bookingModal.classList.add("open");
     const closeBooking = () => bookingModal && bookingModal.classList.remove("open");
+    const openSearch = () => searchOverlay && searchOverlay.classList.add("open");
+    const closeSearch = () => searchOverlay && searchOverlay.classList.remove("open");
 
     document.addEventListener("click", (event) => {
       const target = event.target.closest("button, a, [data-lightbox]");
@@ -205,6 +255,9 @@
       if (target.matches("[data-menu-open]")) mobileMenu && mobileMenu.classList.add("open");
       if (target.matches("[data-menu-close]")) closeMenu();
       if (target.matches(".mobile-menu a")) closeMenu();
+
+      if (target.matches("[data-search-open]")) openSearch();
+      if (target.matches("[data-search-close]")) closeSearch();
 
       if (target.matches("[data-theme-toggle]")) {
         const isDark = document.documentElement.classList.toggle("dark");
@@ -230,6 +283,22 @@
       }
 
       if (target.matches("[data-lightbox-close]")) lightbox && lightbox.classList.remove("open");
+    });
+
+    searchOverlay && searchOverlay.addEventListener("click", (event) => {
+      if (event.target === searchOverlay) closeSearch();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeSearch();
+        closeBooking();
+        closeMenu();
+      }
+      if ((event.metaKey || event.ctrlKey) && event.key === "k") {
+        event.preventDefault();
+        openSearch();
+      }
     });
 
     bookingModal && bookingModal.addEventListener("click", (event) => {
