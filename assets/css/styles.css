@@ -781,19 +781,7 @@ th {
   animation: drift 12s linear infinite;
 }
 
-.feather-stream {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-}
 
-.feather-stream i {
-  position: absolute;
-  color: rgba(255, 250, 240, 0.22);
-  animation: floatFeather 14s ease-in-out infinite;
-}
 
 .floating-frame {
   position: absolute;
@@ -920,17 +908,7 @@ th {
   }
 }
 
-@keyframes floatFeather {
 
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(-8deg);
-  }
-
-  50% {
-    transform: translate3d(18px, -28px, 0) rotate(9deg);
-  }
-}
 
 @media (min-width: 720px) {
   .gallery-grid {

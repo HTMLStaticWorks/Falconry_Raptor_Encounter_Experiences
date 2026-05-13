@@ -458,20 +458,7 @@
     });
   }
 
-  function setupFeathers() {
-    document.querySelectorAll(".feather-stream").forEach((container) => {
-      if (container.children.length) return;
-      for (let i = 0; i < 5; i += 1) {
-        const feather = document.createElement("i");
-        feather.setAttribute("data-lucide", "feather");
-        feather.className = "h-8 w-8";
-        feather.style.left = `${12 + i * 18}%`;
-        feather.style.top = `${18 + (i % 3) * 14}%`;
-        feather.style.animationDelay = `${i * 1.8}s`;
-        container.appendChild(feather);
-      }
-    });
-  }
+
 
   function finish() {
     document.querySelectorAll("[data-current-year]").forEach((item) => {
@@ -488,7 +475,7 @@
     buildBookingModal();
     buildLightbox();
     setupParticles();
-    setupFeathers();
+
     setupEvents();
     setupRevealAndCounters();
     setupParallax();
