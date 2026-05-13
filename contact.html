@@ -28,14 +28,46 @@
 
     <section class="section-pad textured-band">
       <div class="site-shell">
-        <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-          <div class="reveal"><p class="kicker">Contact Form</p><h2 class="section-title mt-3">Tell us what kind of encounter you are imagining.</h2><p class="section-copy mt-5">This demo form is front-end only. Connect it to your booking platform, email service, or CRM when the site goes live.</p><div class="mt-7 grid gap-4"><img data-lightbox class="h-52 w-full rounded-2xl object-cover shadow-luxe" src="assets/img/photographer.png" alt="Falconry booking desk"><img data-lightbox class="h-52 w-full rounded-2xl object-cover shadow-luxe" src="assets/img/photographer.png" alt="Outdoor guide conversation"></div></div>
-          <form class="glass-panel grid gap-4 p-6 reveal">
-            <div class="grid gap-4 md:grid-cols-2"><label class="grid gap-2 text-sm font-bold">Name<input class="form-field" required placeholder="Your name"></label><label class="grid gap-2 text-sm font-bold">Email<input class="form-field" type="email" required placeholder="you@example.com"></label></div>
-            <div class="grid gap-4 md:grid-cols-2"><label class="grid gap-2 text-sm font-bold">Interest<select class="form-field"><option>Private Falconry Experience</option><option>Raptor Encounter Tour</option><option>Photography Package</option><option>Workshop</option><option>Gift Certificate</option><option>Education Program</option></select></label><label class="grid gap-2 text-sm font-bold">Group Size<input class="form-field" type="number" min="1" placeholder="2"></label></div>
-            <label class="grid gap-2 text-sm font-bold">Message<textarea class="form-field min-h-40" placeholder="Preferred dates, accessibility notes, photographer goals, or group details"></textarea></label>
-            <button class="btn-primary justify-self-start" type="submit"><i data-lucide="send" class="h-5 w-5"></i>Send Message</button>
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12 reveal">
+            <p class="kicker justify-center">Contact Form</p>
+            <h2 class="section-title mt-3">Tell us what kind of encounter you are imagining.</h2>
+            <p class="section-copy mt-5 mx-auto max-w-2xl">Ask about availability, weather, accessibility, or group programs. Connect with our handler team for custom inquiries.</p>
+          </div>
+          <form class="glass-panel grid gap-6 p-10 reveal">
+            <div class="grid gap-5 md:grid-cols-2">
+              <label class="grid gap-2 text-sm font-bold">Name
+                <input class="form-field !py-3" required placeholder="Your name">
+              </label>
+              <label class="grid gap-2 text-sm font-bold">Email
+                <input class="form-field !py-3" type="email" required placeholder="you@example.com">
+              </label>
+            </div>
+            <div class="grid gap-5 md:grid-cols-2">
+              <label class="grid gap-2 text-sm font-bold">Interest
+                <select class="form-field !py-3">
+                  <option>Private Falconry Experience</option>
+                  <option>Raptor Encounter Tour</option>
+                  <option>Photography Package</option>
+                  <option>Workshop</option>
+                  <option>Gift Certificate</option>
+                  <option>Education Program</option>
+                </select>
+              </label>
+              <label class="grid gap-2 text-sm font-bold">Group Size
+                <input class="form-field !py-3" type="number" min="1" placeholder="2">
+              </label>
+            </div>
+            <label class="grid gap-2 text-sm font-bold">Message
+              <textarea class="form-field min-h-32 !py-3" placeholder="Preferred dates, accessibility notes, photographer goals, or group details"></textarea>
+            </label>
+            <div class="flex justify-center mt-4">
+              <button class="btn-primary !min-h-14 !px-12 !text-base sm:w-auto w-full" type="submit">
+                <i data-lucide="send" class="h-5 w-5"></i>Send Message
+              </button>
+            </div>
           </form>
+        </div>
         </div>
       </div>
     </section>
@@ -64,11 +96,43 @@
       <div class="site-shell">
         <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div class="reveal"><p class="kicker">FAQ</p><h2 class="section-title mt-3">Before you arrive.</h2><div class="mt-6 grid gap-4"><img data-lightbox class="h-52 w-full rounded-2xl object-cover shadow-luxe" src="assets/img/photographer.png" alt="Guest asking raptor question"><img data-lightbox class="h-52 w-full rounded-2xl object-cover shadow-luxe" src="assets/img/cta_bg.png" alt="Outdoor preparation"></div></div>
-          <div class="grid gap-4 reveal" data-accordion>
-            <article class="accordion-item glass-panel p-5 open"><button class="flex w-full items-center justify-between gap-4 text-start font-display text-xl font-bold" type="button" data-accordion-button>Can children attend?<i data-lucide="chevron-down" class="h-5 w-5 text-bronze"></i></button><div class="accordion-panel"><p class="section-copy pt-4">Yes. Family programs are designed for ages 6+, and handling workshops usually begin at age 10.</p></div></article>
-            <article class="accordion-item glass-panel p-5"><button class="flex w-full items-center justify-between gap-4 text-start font-display text-xl font-bold" type="button" data-accordion-button>What happens in bad weather?<i data-lucide="chevron-down" class="h-5 w-5 text-bronze"></i></button><div class="accordion-panel"><p class="section-copy pt-4">We reschedule, shorten, or adapt sessions when wind, heat, rain, or bird condition makes that the right welfare decision.</p></div></article>
-            <article class="accordion-item glass-panel p-5"><button class="flex w-full items-center justify-between gap-4 text-start font-display text-xl font-bold" type="button" data-accordion-button>Can I buy a gift certificate online?<i data-lucide="chevron-down" class="h-5 w-5 text-bronze"></i></button><div class="accordion-panel"><p class="section-copy pt-4">Yes. Gift certificates are staged as a front-end flow and can connect to your preferred checkout provider.</p></div></article>
-            <article class="accordion-item glass-panel p-5"><button class="flex w-full items-center justify-between gap-4 text-start font-display text-xl font-bold" type="button" data-accordion-button>Are photography sessions beginner friendly?<i data-lucide="chevron-down" class="h-5 w-5 text-bronze"></i></button><div class="accordion-panel"><p class="section-copy pt-4">Yes. Guides can support settings and position choices while experienced photographers work independently.</p></div></article>
+          <div class="grid gap-3 reveal" data-accordion>
+            <article class="accordion-item glass-panel py-4 px-6 open">
+              <button class="flex w-full items-center justify-between gap-4 text-start font-display text-lg font-bold" type="button" data-accordion-button>
+                Can children attend?
+                <i data-lucide="chevron-down" class="h-5 w-5 text-bronze"></i>
+              </button>
+              <div class="accordion-panel">
+                <p class="section-copy pt-3">Yes. Family programs are designed for ages 6+, and handling workshops usually begin at age 10.</p>
+              </div>
+            </article>
+            <article class="accordion-item glass-panel py-4 px-6">
+              <button class="flex w-full items-center justify-between gap-4 text-start font-display text-lg font-bold" type="button" data-accordion-button>
+                What happens in bad weather?
+                <i data-lucide="chevron-down" class="h-5 w-5 text-bronze"></i>
+              </button>
+              <div class="accordion-panel">
+                <p class="section-copy pt-3">We reschedule, shorten, or adapt sessions when wind, heat, rain, or bird condition makes that the right welfare decision.</p>
+              </div>
+            </article>
+            <article class="accordion-item glass-panel py-4 px-6">
+              <button class="flex w-full items-center justify-between gap-4 text-start font-display text-lg font-bold" type="button" data-accordion-button>
+                Can I buy a gift certificate online?
+                <i data-lucide="chevron-down" class="h-5 w-5 text-bronze"></i>
+              </button>
+              <div class="accordion-panel">
+                <p class="section-copy pt-3">Yes. Gift certificates are staged as a front-end flow and can connect to your preferred checkout provider.</p>
+              </div>
+            </article>
+            <article class="accordion-item glass-panel py-4 px-6">
+              <button class="flex w-full items-center justify-between gap-4 text-start font-display text-lg font-bold" type="button" data-accordion-button>
+                Are photography sessions beginner friendly?
+                <i data-lucide="chevron-down" class="h-5 w-5 text-bronze"></i>
+              </button>
+              <div class="accordion-panel">
+                <p class="section-copy pt-3">Yes. Guides can support settings and position choices while experienced photographers work independently.</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>

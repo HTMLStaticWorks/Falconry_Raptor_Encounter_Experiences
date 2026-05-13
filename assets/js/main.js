@@ -2,10 +2,10 @@
   const navItems = [
     { label: "Home", href: "index.html" },
     { label: "Experiences", href: "experiences.html" },
+    { label: "About", href: "about.html" },
     { label: "Bird Profiles", href: "bird-profiles.html" },
     { label: "Workshops", href: "workshops.html" },
     { label: "Photography", href: "photography-packages.html" },
-    { label: "About", href: "about.html" },
     { label: "Contact", href: "contact.html" }
   ];
 
@@ -27,13 +27,13 @@
 
   function buildHeader() {
     const active = currentPage();
-    
-    const navMarkup = navItems.map(item => 
+
+    const navMarkup = navItems.map(item =>
       `<a class="nav-link ${active === item.href ? "active" : ""}" href="${item.href}">${item.label}</a>`
     ).join("");
 
     const mobileMarkup = navItems.map(item => 
-      `<a class="block rounded-xl px-4 py-3 text-base font-semibold ${active === item.href ? "bg-white/10 text-white" : "text-ivory/85 hover:bg-white/10"}" href="${item.href}">${item.label}</a>`
+      `<a class="mobile-nav-link ${active === item.href ? "active" : ""}" href="${item.href}">${item.label}</a>`
     ).join("");
 
     document.querySelectorAll('[data-component="site-header"]').forEach((mount) => {
@@ -45,8 +45,8 @@
                 <a href="index.html" class="flex items-center gap-2 text-ivory" aria-label="Falconry & Raptor Encounters home">
                   <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-5 h-5")}</span>
                   <span class="leading-tight hidden sm:block">
-                    <span class="block font-display text-base font-bold tracking-tight">Aerie Encounters</span>
-                    <span class="block text-[10px] text-ivory/50">Falconry & Raptors</span>
+                    <span class="nav-brand-text block font-display text-base font-bold tracking-tight">Aerie Encounters</span>
+                    <span class="nav-brand-sub block text-[10px]">Falconry & Raptors</span>
                   </span>
                 </a>
               </div>
@@ -56,10 +56,11 @@
               <div class="flex-1 flex items-center justify-end gap-2">
                 <div class="desktop-actions hidden items-center gap-2 xl:flex">
                   <button class="icon-btn !w-10 !h-10" type="button" data-search-open aria-label="Search site">${icon("search", "w-4 h-4")}</button>
+                  <button class="icon-btn !w-10 !h-10" type="button" data-rtl-toggle aria-label="Toggle RTL">${icon("languages", "w-4 h-4")}</button>
+                  <button class="icon-btn !w-10 !h-10" type="button" data-theme-toggle aria-label="Toggle dark mode">${icon("moon", "w-4 h-4")}</button>
+                  <a href="login.html" class="icon-btn !w-10 !h-10 !bg-white/10 !border-white/20" aria-label="User account">${icon("user", "w-4 h-4")}</a>
                   <div class="h-6 w-px bg-white/10 mx-1"></div>
                   <button class="btn-primary !min-h-10 !py-1 !px-4 !text-xs" type="button" data-open-booking>${icon("calendar-check", "w-3 h-3")}<span>Book Experience</span></button>
-                  <button class="icon-btn !w-10 !h-10" type="button" data-theme-toggle aria-label="Toggle dark mode">${icon("moon", "w-4 h-4")}</button>
-                  <button class="icon-btn !w-10 !h-10 !bg-white/10 !border-white/20" type="button" aria-label="User account">${icon("user", "w-4 h-4")}</button>
                 </div>
                 <div class="flex items-center gap-2 xl:hidden">
                   <button class="icon-btn !w-10 !h-10" type="button" data-search-open aria-label="Search site">${icon("search", "w-4 h-4")}</button>
@@ -112,16 +113,21 @@
           <div class="mb-6 flex items-center justify-between">
             <div class="flex items-center gap-3">
               <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-5 h-5")}</span>
-              <span class="font-display text-xl font-bold text-ivory">Aerie Encounters</span>
+              <span class="mobile-menu-brand font-display text-xl font-bold">Aerie Encounters</span>
             </div>
             <button class="icon-btn" type="button" data-menu-close aria-label="Close menu">${icon("x")}</button>
           </div>
-          <nav class="grid gap-1 overflow-y-auto max-h-[60vh]">${mobileMarkup}</nav>
-          <div class="mt-6 pt-6 border-t border-white/10 grid gap-3">
-            <button class="btn-primary" type="button" data-open-booking>${icon("calendar-check", "w-4 h-4")}Book an Experience</button>
-            <div class="flex gap-2">
-              <button class="icon-btn flex-1 !h-12" type="button" data-theme-toggle>${icon("moon")} Theme</button>
-              <button class="icon-btn flex-1 !h-12" type="button" data-rtl-toggle>${icon("languages")} RTL</button>
+          <nav class="grid gap-1 overflow-y-auto max-h-[55vh]">${mobileMarkup}</nav>
+          <div class="mt-auto pt-6 border-t border-white/10">
+            <div class="grid gap-3">
+              <button class="btn-primary !min-h-12 w-full" type="button" data-open-booking>${icon("calendar-check", "w-4 h-4")}Book Experience</button>
+              <div class="flex items-center justify-between gap-2">
+                <div class="flex gap-2">
+                  <button class="icon-btn !w-11 !h-11" type="button" data-theme-toggle aria-label="Toggle theme">${icon("moon", "w-5 h-5")}</button>
+                  <button class="icon-btn !w-11 !h-11" type="button" data-rtl-toggle aria-label="Toggle RTL">${icon("languages", "w-5 h-5")}</button>
+                </div>
+                <a href="login.html" class="icon-btn !w-11 !h-11 !bg-white/10 !border-white/20" aria-label="User account">${icon("user", "w-5 h-5")}</a>
+              </div>
             </div>
           </div>
         </aside>
@@ -131,45 +137,51 @@
 
   function buildFooter() {
     const navLinksMarkup = navItems.map(item => 
-      `<a class="text-sm text-ivory/68 hover:text-bronze" href="${item.href}">${item.label}</a>`
+      `<a class="footer-link flex items-center" href="${item.href}">${item.label}</a>`
     ).join("");
 
     document.querySelectorAll('[data-component="site-footer"]').forEach((mount) => {
       mount.innerHTML = `
-        <footer class="bg-midnight text-ivory">
+        <footer class="footer-main">
           <div class="site-shell py-14">
-            <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
+            <div class="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr]">
               <div>
-                <div class="mb-4 flex items-center gap-3">
-                  <span class="grid h-12 w-12 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-5 h-5")}</span>
-                  <div>
-                    <p class="font-display text-2xl font-bold">Aerie Encounters</p>
-                    <p class="text-sm text-ivory/62">Premium falconry, raptor tours, and conservation education.</p>
-                  </div>
+                <div class="mb-6">
+                  <a href="index.html" class="flex items-center gap-3">
+                    <span class="grid h-12 w-12 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-6 h-6")}</span>
+                    <span class="leading-tight">
+                      <span class="block font-display text-2xl font-bold tracking-tight">Aerie Encounters</span>
+                      <span class="footer-subtext block text-[11px] opacity-70">Falconry & Raptor Encounters</span>
+                    </span>
+                  </a>
                 </div>
-                <p class="max-w-xl leading-8 text-ivory/68">A cinematic eco-tourism experience shaped for curious travelers, photographers, families, and lifelong wildlife learners.</p>
+                <p class="footer-subtext max-w-xl">A cinematic eco-tourism experience shaped for curious travelers, photographers, families, and lifelong wildlife learners.</p>
               </div>
               <div>
-                <h3 class="mb-4 text-lg font-bold text-bronze">Explore</h3>
-                <div class="grid grid-cols-2 gap-3">${navLinksMarkup}</div>
+                <h3 class="footer-heading">Explore</h3>
+                <div class="grid grid-cols-2 gap-y-3 gap-x-6">${navLinksMarkup}</div>
               </div>
               <div>
-                <h3 class="mb-4 text-lg font-bold text-bronze">Plan Your Visit</h3>
-                <div class="grid gap-3 text-sm text-ivory/68">
+                <h3 class="footer-heading">Plan Your Visit</h3>
+                <div class="grid gap-3 text-sm footer-subtext mb-6">
                   <span class="flex items-center gap-2">${icon("map-pin", "w-4 h-4 text-bronze")}Oakridge Forest Reserve</span>
                   <span class="flex items-center gap-2">${icon("phone", "w-4 h-4 text-bronze")}+1 (555) 014-7827</span>
                   <span class="flex items-center gap-2">${icon("mail", "w-4 h-4 text-bronze")}hello@aerieencounters.example</span>
                 </div>
-                <div class="mt-5 flex gap-2">
-                  <a class="icon-btn" href="https://www.instagram.com/" aria-label="Instagram">${icon("instagram")}</a>
-                  <a class="icon-btn" href="https://www.facebook.com/" aria-label="Facebook">${icon("facebook")}</a>
-                  <a class="icon-btn" href="https://www.youtube.com/" aria-label="YouTube">${icon("youtube")}</a>
+                <h3 class="footer-heading !mb-4">Connect With Us</h3>
+                <div class="flex gap-3">
+                  <a class="icon-btn !w-11 !h-11 !bg-bronze/15 !text-bronze !border-bronze/30 hover:!bg-bronze hover:!text-midnight transition-all" href="https://www.instagram.com/" aria-label="Instagram">${icon("instagram", "w-5 h-5")}</a>
+                  <a class="icon-btn !w-11 !h-11 !bg-bronze/15 !text-bronze !border-bronze/30 hover:!bg-bronze hover:!text-midnight transition-all" href="https://www.facebook.com/" aria-label="Facebook">${icon("facebook", "w-5 h-5")}</a>
+                  <a class="icon-btn !w-11 !h-11 !bg-bronze/15 !text-bronze !border-bronze/30 hover:!bg-bronze hover:!text-midnight transition-all" href="https://www.youtube.com/" aria-label="YouTube">${icon("youtube", "w-5 h-5")}</a>
                 </div>
               </div>
             </div>
-            <div class="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-ivory/54 md:flex-row md:items-center md:justify-between">
+            <div class="mt-12 flex flex-col gap-3 border-t border-[var(--line)] pt-8 text-sm footer-subtext md:flex-row md:items-center md:justify-between">
               <p>© <span data-current-year></span> Aerie Encounters. Crafted for responsible wildlife experiences.</p>
-              <p>No dashboard or admin portal included.</p>
+              <div class="flex gap-6">
+                <a href="#" class="hover:text-bronze transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-bronze transition-colors">Terms of Service</a>
+              </div>
             </div>
           </div>
         </footer>
@@ -185,26 +197,26 @@
     modal.dataset.bookingModal = "";
     modal.innerHTML = `
       <div class="modal-card">
-        <div class="flex items-start justify-between gap-4 border-b border-[var(--line)] p-6">
-          <div>
-            <p class="kicker">Reservation Request</p>
-            <h2 class="mt-2 font-display text-3xl font-bold">Book an Experience</h2>
-            <p class="mt-2 section-copy">Tell us what you are dreaming of and our handler team will confirm availability.</p>
-          </div>
-          <button class="icon-btn !border-[var(--line)] !text-[var(--ink)]" type="button" data-close-booking aria-label="Close booking modal">${icon("x")}</button>
+        <div class="border-b border-[var(--line)] p-8 text-center relative">
+          <p class="kicker justify-center">Reservation Request</p>
+          <h2 class="mt-3 font-display text-3xl font-bold">Book an Experience</h2>
+          <p class="mt-2 section-copy mx-auto max-w-md">Tell us what you are dreaming of and our handler team will confirm availability.</p>
+          <button class="icon-btn !border-[var(--line)] !text-[var(--ink)] absolute right-6 top-6" type="button" data-close-booking aria-label="Close booking modal">${icon("x")}</button>
         </div>
-        <form class="grid gap-4 p-6" data-booking-form>
-          <div class="grid gap-4 md:grid-cols-2">
+        <form class="grid gap-5 p-8" data-booking-form>
+          <div class="grid gap-5 md:grid-cols-2">
             <label class="grid gap-2 text-sm font-bold">Name<input class="form-field" required placeholder="Your name"></label>
             <label class="grid gap-2 text-sm font-bold">Email<input class="form-field" type="email" required placeholder="you@example.com"></label>
           </div>
-          <div class="grid gap-4 md:grid-cols-2">
+          <div class="grid gap-5 md:grid-cols-2">
             <label class="grid gap-2 text-sm font-bold">Experience<select class="form-field" required>${options}</select></label>
             <label class="grid gap-2 text-sm font-bold">Preferred Date<input class="form-field" type="date" required></label>
           </div>
           <label class="grid gap-2 text-sm font-bold">Message<textarea class="form-field min-h-32" placeholder="Guests, accessibility needs, photography goals, or gift notes"></textarea></label>
-          <button class="btn-primary justify-self-start" type="submit">${icon("send", "w-4 h-4")}Send Request</button>
-          <p class="hidden rounded-xl border border-bronze/30 bg-bronze/10 p-4 text-sm font-semibold" data-booking-success>Your request is staged for this demo. Connect this form to your booking service when you go live.</p>
+          <div class="flex justify-center mt-2">
+            <button class="btn-primary !min-h-12 !px-10" type="submit">${icon("send", "w-4 h-4")}Send Request</button>
+          </div>
+          <p class="hidden rounded-xl border border-bronze/30 bg-bronze/10 p-4 text-sm font-semibold text-center" data-booking-success>Your request is staged for this demo. Connect this form to your booking service when you go live.</p>
         </form>
       </div>
     `;
@@ -227,7 +239,13 @@
     const stored = localStorage.getItem("aerie-theme");
     const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     const theme = stored || (prefersDark ? "dark" : "light");
-    document.documentElement.classList.toggle("dark", theme === "dark");
+    const isDark = theme === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+    
+    // Initial icon state
+    document.querySelectorAll("[data-theme-toggle]").forEach(btn => {
+      btn.innerHTML = icon(isDark ? "sun" : "moon", btn.classList.contains("!w-10") ? "w-4 h-4" : "w-5 h-5");
+    });
   }
 
   function applyDirection() {
@@ -262,6 +280,12 @@
       if (target.matches("[data-theme-toggle]")) {
         const isDark = document.documentElement.classList.toggle("dark");
         localStorage.setItem("aerie-theme", isDark ? "dark" : "light");
+        
+        // Dynamic icon update
+        document.querySelectorAll("[data-theme-toggle]").forEach(btn => {
+          btn.innerHTML = icon(isDark ? "sun" : "moon", btn.classList.contains("!w-10") ? "w-4 h-4" : "w-5 h-5");
+        });
+        if (window.lucide) window.lucide.createIcons();
       }
 
       if (target.matches("[data-rtl-toggle]")) {

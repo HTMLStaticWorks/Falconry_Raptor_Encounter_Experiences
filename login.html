@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to your Aerie Encounters account to manage your falconry bookings, workshop history, and gift certificates.">
+  <title>Login | Aerie Encounters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="assets/js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+</head>
+<body class="bg-midnight min-h-screen flex flex-col items-center justify-center py-12 px-4 relative overflow-y-auto">
+  <!-- Top Actions -->
+  <div class="fixed top-6 right-6 z-50 flex gap-2">
+    <button class="icon-btn !w-10 !h-10 !bg-white/5 !border-white/10" type="button" data-theme-toggle aria-label="Toggle theme">
+      <i data-lucide="moon" class="w-4 h-4 text-ivory"></i>
+    </button>
+    <button class="icon-btn !w-10 !h-10 !bg-white/5 !border-white/10" type="button" data-rtl-toggle aria-label="Toggle RTL">
+      <i data-lucide="languages" class="w-4 h-4 text-ivory"></i>
+    </button>
+  </div>
+
+  <!-- Ambient Background -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-midnight via-midnight/90 to-midnight/80"></div>
+    <img src="assets/img/hero_falcon.png" class="w-full h-full object-cover opacity-20 blur-sm" alt="">
+  </div>
+  <div class="ambient-particles"></div>
+
+  <main class="relative z-10 w-full max-w-[460px] flex flex-col items-center reveal">
+    <div class="glass-panel p-8 md:p-12 shadow-2xl border-white/10 w-full">
+      <div class="flex flex-col items-center mb-10">
+        <a href="index.html" class="flex flex-col items-center gap-3 transition-transform hover:scale-105 mb-6">
+          <span class="grid h-14 w-14 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">
+            <i data-lucide="feather" class="w-7 h-7"></i>
+          </span>
+          <div class="text-center">
+            <span class="block font-display text-2xl font-bold tracking-tight text-ivory">Aerie Encounters</span>
+            <span class="block text-[10px] text-bronze uppercase tracking-[0.2em] font-bold">Falconry & Raptors</span>
+          </div>
+        </a>
+        <p class="kicker justify-center">Welcome Back</p>
+        <h1 class="font-display text-4xl font-bold mt-4">Login to Aerie</h1>
+        <p class="text-ivory/60 mt-3 text-sm">Manage your encounters and field sessions.</p>
+      </div>
+
+      <form class="grid gap-5">
+        <label class="grid gap-2 text-xs font-bold uppercase tracking-widest text-ivory/80">
+          Email Address
+          <input type="email" class="form-field !bg-white/5 !border-white/10 focus:!border-bronze" placeholder="you@example.com" required>
+        </label>
+        
+        <label class="grid gap-2 text-xs font-bold uppercase tracking-widest text-ivory/80">
+          <div class="flex justify-between items-center">
+            <span>Password</span>
+            <a href="#" class="text-[10px] text-bronze hover:underline lowercase tracking-normal font-medium">Forgot?</a>
+          </div>
+          <input type="password" class="form-field !bg-white/5 !border-white/10 focus:!border-bronze" placeholder="••••••••" required>
+        </label>
+
+        <div class="flex items-center gap-2 mt-1">
+          <input type="checkbox" id="remember" class="w-4 h-4 rounded border-white/10 bg-white/5 text-bronze focus:ring-bronze">
+          <label for="remember" class="text-xs text-ivory/70">Remember this device</label>
+        </div>
+
+        <button type="submit" class="btn-primary !min-h-12 w-full mt-2">
+          <i data-lucide="log-in" class="w-4 h-4"></i>Sign In
+        </button>
+      </form>
+
+      <div class="relative my-8">
+        <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-white/10"></div></div>
+        <div class="relative flex justify-center text-[10px] uppercase tracking-[0.2em]"><span class="bg-midnight px-4 text-ivory/40">Or continue with</span></div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <button class="icon-btn !w-full !h-12 !rounded-xl !border-white/10 hover:!bg-white/5 flex items-center justify-center gap-2 text-xs">
+          <i data-lucide="mail" class="w-4 h-4 text-bronze"></i>Google
+        </button>
+        <button class="icon-btn !w-full !h-12 !rounded-xl !border-white/10 hover:!bg-white/5 flex items-center justify-center gap-2 text-xs">
+          <i data-lucide="apple" class="w-4 h-4 text-white"></i>Apple
+        </button>
+      </div>
+
+      <p class="text-center mt-10 text-sm text-ivory/60">
+        Don't have an account? 
+        <a href="signup.html" class="text-bronze font-bold hover:underline">Create one</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
