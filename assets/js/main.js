@@ -20,6 +20,8 @@
 
   const icon = (name, className = "w-5 h-5") => `<i data-lucide="${name}" class="${className}" aria-hidden="true"></i>`;
 
+  const featherSVG = (size = "w-5 h-5") => `<svg xmlns="http://www.w3.org/2000/svg" class="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>`;
+
   const currentPage = () => {
     const page = window.location.pathname.split("/").pop();
     return page || "index.html";
@@ -43,7 +45,7 @@
             <div class="flex items-center justify-between gap-3">
               <div class="flex-1 flex items-center">
                 <a href="index.html" class="flex items-center gap-2 text-ivory" aria-label="Falconry & Raptor Encounters home">
-                  <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-5 h-5")}</span>
+                  <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${featherSVG("w-5 h-5")}</span>
                   <span class="leading-tight hidden sm:block">
                     <span class="nav-brand-text block font-display text-base font-bold tracking-tight">Aerie Encounters</span>
                     <span class="nav-brand-sub block text-[10px]">Falconry & Raptors</span>
@@ -112,7 +114,7 @@
         <aside class="mobile-menu p-5" data-mobile-menu aria-label="Mobile navigation">
           <div class="mb-6 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-5 h-5")}</span>
+              <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${featherSVG("w-5 h-5")}</span>
               <span class="mobile-menu-brand font-display text-xl font-bold">Aerie Encounters</span>
             </div>
             <button class="icon-btn" type="button" data-menu-close aria-label="Close menu">${icon("x")}</button>
@@ -148,9 +150,9 @@
               <div>
                 <div class="mb-6">
                   <a href="index.html" class="flex items-center gap-3">
-                    <span class="grid h-12 w-12 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${icon("feather", "w-6 h-6")}</span>
+                    <span class="grid h-12 w-12 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${featherSVG("w-6 h-6")}</span>
                     <span class="leading-tight">
-                      <span class="block font-display text-2xl font-bold tracking-tight">Aerie Encounters</span>
+                      <span class="footer-brand-name block font-display text-2xl font-bold tracking-tight">Aerie Encounters</span>
                       <span class="footer-subtext block text-[11px] opacity-70">Falconry & Raptor Encounters</span>
                     </span>
                   </a>
@@ -170,9 +172,15 @@
                 </div>
                 <h3 class="footer-heading !mb-4">Connect With Us</h3>
                 <div class="flex gap-3">
-                  <a class="icon-btn !w-11 !h-11 !bg-bronze/15 !text-bronze !border-bronze/30 hover:!bg-bronze hover:!text-midnight transition-all" href="https://www.instagram.com/" aria-label="Instagram">${icon("instagram", "w-5 h-5")}</a>
-                  <a class="icon-btn !w-11 !h-11 !bg-bronze/15 !text-bronze !border-bronze/30 hover:!bg-bronze hover:!text-midnight transition-all" href="https://www.facebook.com/" aria-label="Facebook">${icon("facebook", "w-5 h-5")}</a>
-                  <a class="icon-btn !w-11 !h-11 !bg-bronze/15 !text-bronze !border-bronze/30 hover:!bg-bronze hover:!text-midnight transition-all" href="https://www.youtube.com/" aria-label="YouTube">${icon("youtube", "w-5 h-5")}</a>
+                  <a class="icon-btn !w-11 !h-11 !bg-bronze/15 !text-bronze !border-bronze/30 hover:!bg-bronze hover:!text-midnight transition-all" href="https://www.instagram.com/" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  </a>
+                  <a class="icon-btn !w-11 !h-11 !bg-bronze/15 !text-bronze !border-bronze/30 hover:!bg-bronze hover:!text-midnight transition-all" href="https://www.facebook.com/" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </a>
+                  <a class="icon-btn !w-11 !h-11 !bg-bronze/15 !text-bronze !border-bronze/30 hover:!bg-bronze hover:!text-midnight transition-all" href="https://www.youtube.com/" aria-label="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                  </a>
                 </div>
               </div>
             </div>

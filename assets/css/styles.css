@@ -279,6 +279,14 @@ h4 {
   color: rgba(23, 35, 31, 0.6);
 }
 
+.footer-brand-name {
+  color: #f8f1e4;
+}
+
+:root:not(.dark) .footer-brand-name {
+  color: var(--ink);
+}
+
 .dropdown-icon {
   width: 2rem;
   height: 2rem;
@@ -475,7 +483,12 @@ h4 {
 .hero-content {
   position: relative;
   z-index: 2;
-  padding-block: 9rem 5rem;
+  padding-block: 10rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
 }
 
 .hero-title {
@@ -483,6 +496,8 @@ h4 {
   line-height: 1.0;
   text-wrap: balance;
   text-shadow: 0 22px 54px rgba(0, 0, 0, 0.44);
+  max-width: 20ch;
+  margin-inline: auto;
 }
 
 .section-pad {
@@ -936,20 +951,8 @@ th {
     display: none !important;
   }
 
-  .floating-frame {
-    position: relative;
-    right: auto;
-    left: auto;
-    bottom: auto;
-    width: 100%;
-    max-width: 720px;
-    margin: 2.5rem auto 0;
-    grid-template-columns: 1fr 1fr;
-    z-index: 2;
-  }
-
-  .floating-frame .media-card {
-    height: 200px;
+  .hero-content {
+    padding-block: 8.5rem 4.5rem;
   }
 }
 
@@ -960,14 +963,6 @@ th {
 
   .hero-content {
     padding-block: 7.5rem 3.5rem;
-  }
-
-  .floating-frame {
-    margin-top: 1.6rem;
-  }
-
-  .floating-frame .media-card {
-    height: 126px;
   }
 
   .btn-primary,
