@@ -581,7 +581,8 @@ h4 {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.1);
   box-shadow: 0 20px 46px rgba(192, 139, 62, 0.42);
 }
 
@@ -608,6 +609,36 @@ h4 {
   border-color: rgba(192, 139, 62, 0.5);
 }
 
+.text-link {
+  color: var(--bronze);
+  text-decoration: none;
+  position: relative;
+  transition: color 200ms ease;
+}
+
+.text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms ease;
+}
+
+.text-link:hover {
+  color: var(--bronze);
+  filter: brightness(1.2);
+}
+
+.text-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 .icon-btn {
   width: 2.75rem;
   height: 2.75rem;
@@ -624,6 +655,32 @@ h4 {
   transform: translateY(-1px);
   border-color: rgba(192, 139, 62, 0.6);
   background: rgba(192, 139, 62, 0.14);
+}
+
+.text-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 250, 240, 0.2);
+  color: #fffaf0;
+  background: rgba(255, 250, 240, 0.07);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.text-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(192, 139, 62, 0.6);
+  background: rgba(192, 139, 62, 0.14);
+}
+
+:root:not(.dark) .text-btn {
+  border-color: rgba(23, 35, 31, 0.2);
+  color: var(--ink);
+  background: rgba(23, 35, 31, 0.06);
 }
 
 .glass-panel,

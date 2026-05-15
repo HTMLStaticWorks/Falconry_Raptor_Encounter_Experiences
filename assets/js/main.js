@@ -57,7 +57,7 @@
               <div class="flex-1 flex items-center justify-end gap-2">
                 <div class="desktop-actions hidden items-center gap-2 xl:flex">
                   <button class="icon-btn !w-10 !h-10" type="button" data-search-open aria-label="Search site">${icon("search", "w-4 h-4")}</button>
-                  <button class="icon-btn !w-10 !h-10" type="button" data-rtl-toggle aria-label="Toggle RTL">${icon("languages", "w-4 h-4")}</button>
+                  <button class="text-btn !w-10 !h-10" type="button" data-rtl-toggle aria-label="Toggle RTL">RTL</button>
                   <button class="icon-btn !w-10 !h-10" type="button" data-theme-toggle aria-label="Toggle dark mode">${icon("moon", "w-4 h-4")}</button>
                   <a href="login.html" class="icon-btn !w-10 !h-10 !bg-white/10 !border-white/20" aria-label="User account">${icon("user", "w-4 h-4")}</a>
                   <div class="h-6 w-px bg-white/10 mx-1"></div>
@@ -125,7 +125,7 @@
               <div class="flex items-center justify-between gap-2">
                 <div class="flex gap-2">
                   <button class="icon-btn !w-11 !h-11" type="button" data-theme-toggle aria-label="Toggle theme">${icon("moon", "w-5 h-5")}</button>
-                  <button class="icon-btn !w-11 !h-11" type="button" data-rtl-toggle aria-label="Toggle RTL">${icon("languages", "w-5 h-5")}</button>
+                  <button class="text-btn !w-11 !h-11" type="button" data-rtl-toggle aria-label="Toggle RTL">RTL</button>
                 </div>
                 <a href="login.html" class="icon-btn !w-11 !h-11 !bg-white/10 !border-white/20" aria-label="User account">${icon("user", "w-5 h-5")}</a>
               </div>
