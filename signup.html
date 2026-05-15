@@ -40,12 +40,11 @@
           </span>
           <div class="text-center">
             <span class="block font-display text-2xl font-bold tracking-tight text-ivory">Aerie Encounters</span>
-            <span class="block text-[10px] text-bronze uppercase tracking-[0.2em] font-bold">Falconry & Raptors</span>
           </div>
         </a>
         <p class="kicker justify-center">Start Your Journey</p>
-        <h1 class="font-display text-4xl font-bold mt-4">Create Your Account</h1>
-        <p class="text-ivory/60 mt-3 text-sm">Join a community of wildlife enthusiasts and field craft learners.</p>
+        <h1 class="font-display text-4xl font-bold mt-4 text-center">Create Your Account</h1>
+        <p class="text-ivory/60 mt-3 text-sm text-center">Join a community of wildlife enthusiasts and field craft learners.</p>
       </div>
 
       <form class="grid gap-5">
@@ -66,8 +65,13 @@
         </label>
         
         <label class="grid gap-2 text-xs font-bold uppercase tracking-widest text-ivory/80">
-          Create Password
-          <input type="password" class="form-field !bg-white/5 !border-white/10 focus:!border-bronze" placeholder="••••••••" required>
+          <span>Create Password</span>
+          <div class="relative">
+            <input type="password" id="signup-password" class="form-field !bg-white/5 !border-white/10 focus:!border-bronze w-full pr-10" placeholder="••••••••" required>
+            <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-ivory/50 hover:text-bronze transition-colors" onclick="const p = document.getElementById('signup-password'); p.type = p.type === 'password' ? 'text' : 'password'; this.querySelector('i').setAttribute('data-lucide', p.type === 'password' ? 'eye' : 'eye-off'); lucide.createIcons();" aria-label="Toggle password visibility">
+              <i data-lucide="eye" class="w-4 h-4"></i>
+            </button>
+          </div>
         </label>
 
         <p class="text-[11px] text-ivory/50 leading-relaxed mt-1 text-center">
@@ -90,8 +94,8 @@
         <button class="icon-btn !w-full !h-12 !rounded-xl !border-white/10 hover:!bg-white/5 flex items-center justify-center gap-2 text-xs">
           <i data-lucide="mail" class="w-4 h-4 text-bronze"></i>Google
         </button>
-        <button class="icon-btn !w-full !h-12 !rounded-xl !border-white/10 hover:!bg-white/5 flex items-center justify-center gap-2 text-xs">
-          <i data-lucide="apple" class="w-4 h-4 text-white"></i>Apple
+        <button class="!w-full !h-12 !rounded-xl !bg-black !text-white hover:!bg-zinc-900 transition-colors flex items-center justify-center gap-2 text-xs font-semibold">
+          <i data-lucide="apple" class="w-4 h-4 fill-white"></i>Apple
         </button>
       </div>
 

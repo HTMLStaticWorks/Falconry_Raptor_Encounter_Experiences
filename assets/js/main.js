@@ -34,7 +34,7 @@
       `<a class="nav-link ${active === item.href ? "active" : ""}" href="${item.href}">${item.label}</a>`
     ).join("");
 
-    const mobileMarkup = navItems.map(item => 
+    const mobileMarkup = navItems.map(item =>
       `<a class="mobile-nav-link ${active === item.href ? "active" : ""}" href="${item.href}">${item.label}</a>`
     ).join("");
 
@@ -45,10 +45,9 @@
             <div class="flex items-center justify-between gap-3">
               <div class="flex-1 flex items-center">
                 <a href="index.html" class="flex items-center gap-2 text-ivory" aria-label="Falconry & Raptor Encounters home">
-                  <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${featherSVG("w-5 h-5")}</span>
-                  <span class="leading-tight hidden sm:block">
-                    <span class="nav-brand-text block font-display text-base font-bold tracking-tight">Aerie Encounters</span>
-                    <span class="nav-brand-sub block text-[10px]">Falconry & Raptors</span>
+                  <span class="brand-icon grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${featherSVG("w-5 h-5")}</span>
+                  <span class="leading-tight flex items-baseline gap-2">
+                    <span class="nav-brand-text whitespace-nowrap font-display text-base font-bold tracking-tight">Aerie Encounters</span>
                   </span>
                 </a>
               </div>
@@ -114,7 +113,7 @@
         <aside class="mobile-menu p-5" data-mobile-menu aria-label="Mobile navigation">
           <div class="mb-6 flex items-center justify-between">
             <div class="flex items-center gap-3">
-              <span class="grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${featherSVG("w-5 h-5")}</span>
+              <span class="brand-icon grid h-10 w-10 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${featherSVG("w-5 h-5")}</span>
               <span class="mobile-menu-brand font-display text-xl font-bold">Aerie Encounters</span>
             </div>
             <button class="icon-btn" type="button" data-menu-close aria-label="Close menu">${icon("x")}</button>
@@ -138,9 +137,6 @@
   }
 
   function buildFooter() {
-    const navLinksMarkup = navItems.map(item => 
-      `<a class="footer-link flex items-center" href="${item.href}">${item.label}</a>`
-    ).join("");
 
     document.querySelectorAll('[data-component="site-footer"]').forEach((mount) => {
       mount.innerHTML = `
@@ -150,10 +146,9 @@
               <div>
                 <div class="mb-6">
                   <a href="index.html" class="flex items-center gap-3">
-                    <span class="grid h-12 w-12 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${featherSVG("w-6 h-6")}</span>
+                    <span class="brand-icon grid h-12 w-12 place-items-center rounded-full border border-bronze/50 bg-bronze/15 text-bronze">${featherSVG("w-6 h-6")}</span>
                     <span class="leading-tight">
                       <span class="footer-brand-name block font-display text-2xl font-bold tracking-tight">Aerie Encounters</span>
-                      <span class="footer-subtext block text-[11px] opacity-70">Falconry & Raptor Encounters</span>
                     </span>
                   </a>
                 </div>
@@ -161,7 +156,9 @@
               </div>
               <div>
                 <h3 class="footer-heading">Explore</h3>
-                <div class="grid grid-cols-2 gap-y-3 gap-x-6">${navLinksMarkup}</div>
+                <nav class="flex flex-col gap-3">
+                  ${navItems.map(item => `<a class="footer-link" href="${item.href}">${item.label}</a>`).join("")}
+                </nav>
               </div>
               <div>
                 <h3 class="footer-heading">Plan Your Visit</h3>
@@ -249,7 +246,7 @@
     const theme = stored || (prefersDark ? "dark" : "light");
     const isDark = theme === "dark";
     document.documentElement.classList.toggle("dark", isDark);
-    
+
     // Initial icon state
     document.querySelectorAll("[data-theme-toggle]").forEach(btn => {
       btn.innerHTML = icon(isDark ? "sun" : "moon", btn.classList.contains("!w-10") ? "w-4 h-4" : "w-5 h-5");
@@ -288,7 +285,7 @@
       if (target.matches("[data-theme-toggle]")) {
         const isDark = document.documentElement.classList.toggle("dark");
         localStorage.setItem("aerie-theme", isDark ? "dark" : "light");
-        
+
         // Dynamic icon update
         document.querySelectorAll("[data-theme-toggle]").forEach(btn => {
           btn.innerHTML = icon(isDark ? "sun" : "moon", btn.classList.contains("!w-10") ? "w-4 h-4" : "w-5 h-5");

@@ -40,12 +40,11 @@
           </span>
           <div class="text-center">
             <span class="block font-display text-2xl font-bold tracking-tight text-ivory">Aerie Encounters</span>
-            <span class="block text-[10px] text-bronze uppercase tracking-[0.2em] font-bold">Falconry & Raptors</span>
           </div>
         </a>
         <p class="kicker justify-center">Welcome Back</p>
-        <h1 class="font-display text-4xl font-bold mt-4">Login to Aerie</h1>
-        <p class="text-ivory/60 mt-3 text-sm">Manage your encounters and field sessions.</p>
+        <h1 class="font-display text-4xl font-bold mt-4 text-center">Login to Aerie</h1>
+        <p class="text-ivory/60 mt-3 text-sm text-center">Manage your encounters and field sessions.</p>
       </div>
 
       <form class="grid gap-5">
@@ -55,12 +54,18 @@
         </label>
         
         <label class="grid gap-2 text-xs font-bold uppercase tracking-widest text-ivory/80">
-          <div class="flex justify-between items-center">
-            <span>Password</span>
-            <a href="#" class="text-[10px] text-bronze hover:underline lowercase tracking-normal font-medium">Forgot?</a>
+          <span>Password</span>
+          <div class="relative">
+            <input type="password" id="login-password" class="form-field !bg-white/5 !border-white/10 focus:!border-bronze w-full pr-10" placeholder="••••••••" required>
+            <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-ivory/50 hover:text-bronze transition-colors" onclick="const p = document.getElementById('login-password'); p.type = p.type === 'password' ? 'text' : 'password'; this.querySelector('i').setAttribute('data-lucide', p.type === 'password' ? 'eye' : 'eye-off'); lucide.createIcons();" aria-label="Toggle password visibility">
+              <i data-lucide="eye" class="w-4 h-4"></i>
+            </button>
           </div>
-          <input type="password" class="form-field !bg-white/5 !border-white/10 focus:!border-bronze" placeholder="••••••••" required>
         </label>
+        
+        <div class="flex justify-end -mt-2">
+          <a href="#" class="text-[11px] text-bronze/80 hover:text-bronze transition-colors font-medium">Forgot password?</a>
+        </div>
 
         <div class="flex items-center gap-2 mt-1">
           <input type="checkbox" id="remember" class="w-4 h-4 rounded border-white/10 bg-white/5 text-bronze focus:ring-bronze">
@@ -81,8 +86,8 @@
         <button class="icon-btn !w-full !h-12 !rounded-xl !border-white/10 hover:!bg-white/5 flex items-center justify-center gap-2 text-xs">
           <i data-lucide="mail" class="w-4 h-4 text-bronze"></i>Google
         </button>
-        <button class="icon-btn !w-full !h-12 !rounded-xl !border-white/10 hover:!bg-white/5 flex items-center justify-center gap-2 text-xs">
-          <i data-lucide="apple" class="w-4 h-4 text-white"></i>Apple
+        <button class="!w-full !h-12 !rounded-xl !bg-black !text-white hover:!bg-zinc-900 transition-colors flex items-center justify-center gap-2 text-xs font-semibold">
+          <i data-lucide="apple" class="w-4 h-4 fill-white"></i>Apple
         </button>
       </div>
 

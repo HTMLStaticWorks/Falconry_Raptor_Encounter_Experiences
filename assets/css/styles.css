@@ -26,6 +26,19 @@
   box-sizing: border-box;
 }
 
+/* ── Brand icon: always bronze in both themes ── */
+.brand-icon {
+  border-color: rgba(192, 139, 62, 0.55) !important;
+  background: rgba(192, 139, 62, 0.15) !important;
+  color: #c08b3e !important;
+}
+
+.dark .brand-icon {
+  color: #dca556 !important;
+  border-color: rgba(220, 165, 86, 0.6) !important;
+  background: rgba(220, 165, 86, 0.1) !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
